@@ -1,0 +1,57 @@
+@use 'styles/abstracts' as *;
+
+.form {
+  @include flex(row, flex-start, center, $space-sm);
+
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  background-color: $color-surface-alt;
+  border: 1px solid transparent;
+  border-radius: $radius-pill;
+  padding: 0 $space-md;
+  transition: border-color $transition-fast;
+
+  &:focus-within {
+    border-color: $color-primary;
+    background-color: $color-surface;
+  }
+}
+
+.icon {
+  font-size: $font-size-sm;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  border: none;
+  background: none;
+  padding: 9px 0;
+  color: $color-text;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+.clear {
+  background: none;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  color: $color-text-muted;
+  padding: 0;
+  flex-shrink: 0;
+
+  &:hover {
+    color: $color-text;
+  }
+}

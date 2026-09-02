@@ -1,0 +1,24 @@
+@use 'styles/abstracts' as *;
+
+.wrapper {
+  @include flex(column, center, center, $space-sm);
+  @include card($space-xl);
+
+  text-align: center;
+}
+
+.icon {
+  font-size: 42px;
+  line-height: 1;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-lg;
+}
+
+.description {
+  margin: 0;
+  color: $color-text-muted;
+  max-width: 42ch;
+}

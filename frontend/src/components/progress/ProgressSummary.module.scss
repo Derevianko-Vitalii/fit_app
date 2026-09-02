@@ -1,0 +1,51 @@
+@use 'styles/abstracts' as *;
+
+.summary {
+  @include card($space-lg);
+  @include flex(column, flex-start, stretch, $space-lg);
+
+  margin-bottom: $space-md;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-md;
+
+  @include below('sm') {
+    gap: $space-sm;
+  }
+}
+
+.tile {
+  @include flex(column, center, center, 2px);
+
+  padding: $space-md;
+  border-radius: $radius-md;
+  background-color: $color-surface-alt;
+  text-align: center;
+}
+
+.tileIcon {
+  font-size: $font-size-xl;
+  line-height: 1;
+}
+
+.tileValue {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  font-variant-numeric: tabular-nums;
+
+  @include below('sm') {
+    font-size: $font-size-xl;
+  }
+}
+
+.tileLabel {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+.overall {
+  width: 100%;
+}

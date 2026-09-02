@@ -1,0 +1,85 @@
+@use 'styles/abstracts' as *;
+
+.card {
+  @include flex(column, flex-start, stretch, $space-lg);
+
+  padding: $space-lg;
+  background-color: $color-primary;
+  border-radius: $radius-lg;
+  color: $color-text;
+}
+
+.greeting {
+  margin: 0;
+  font-size: $font-size-xxl;
+  color: $color-text;
+  overflow-wrap: anywhere;
+}
+
+.identity {
+  @include flex(row, flex-start, center, $space-md);
+}
+
+.names {
+  @include flex(column, center, flex-start, 2px);
+  min-width: 0;
+}
+
+.name {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  overflow-wrap: break-word;
+}
+
+.email {
+  font-size: $font-size-sm;
+  color: rgba($color-text, 0.65);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stats {
+  @include flex(row, flex-start, stretch, $space-sm);
+  margin: 0;
+}
+
+.stat {
+  @include flex(column, center, center, 0);
+
+  flex: 1;
+  margin: 0;
+  padding: $space-xs;
+  border: none;
+  background: none;
+  border-radius: $radius-sm;
+  text-align: center;
+  color: inherit;
+}
+
+button.stat:hover {
+  background-color: rgba($color-text-inverse, 0.25);
+}
+
+.statValue {
+  margin: 0;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  font-variant-numeric: tabular-nums;
+}
+
+.statLabel {
+  font-size: $font-size-sm;
+  color: rgba($color-text, 0.7);
+}
+
+.settingsLink {
+  color: $color-text;
+  font-size: $font-size-sm;
+  text-align: center;
+
+  &:hover {
+    color: $color-text-inverse;
+  }
+}

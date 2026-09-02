@@ -1,0 +1,70 @@
+@use 'styles/abstracts' as *;
+
+.container {
+  @include flex(column, flex-start, stretch, $space-sm);
+
+  position: fixed;
+  bottom: $space-lg;
+  right: $space-lg;
+  z-index: $z-toast;
+  width: min(340px, calc(100vw - #{$space-lg * 2}));
+
+  @include below('sm') {
+    right: $space-sm;
+    left: $space-sm;
+    bottom: $space-sm;
+    width: auto;
+  }
+}
+
+.toast {
+  @include flex(row, space-between, center, $space-sm);
+
+  padding: $space-sm $space-md;
+  border-radius: $radius-sm;
+  box-shadow: $shadow-md;
+  color: $color-text-inverse;
+  font-size: $font-size-sm;
+  animation: slide-in $transition-base;
+}
+
+.message {
+  flex: 1;
+  min-width: 0;
+}
+
+.close {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.info {
+  background-color: $color-text;
+}
+
+.success {
+  background-color: $color-success;
+}
+
+.error {
+  background-color: $color-danger;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

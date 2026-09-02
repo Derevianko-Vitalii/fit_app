@@ -1,0 +1,101 @@
+@use 'styles/abstracts' as *;
+
+.card {
+  @include card($space-md);
+  @include flex(column, flex-start, stretch, $space-md);
+}
+
+.done {
+  border-color: rgba($color-success, 0.4);
+  background-color: rgba($color-success, 0.04);
+}
+
+.header {
+  @include flex(row, flex-start, flex-start, $space-sm);
+}
+
+.icon {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.titleBlock {
+  @include flex(column, flex-start, flex-start, $space-xs);
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-md;
+  overflow-wrap: anywhere;
+}
+
+.tags {
+  @include flex(row, flex-start, center, $space-xs);
+  flex-wrap: wrap;
+}
+
+.headerActions {
+  @include flex(row, flex-end, center, $space-xs);
+  flex-shrink: 0;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: $radius-sm;
+  color: $color-text-muted;
+
+  &:hover {
+    background-color: $color-surface-alt;
+    color: $color-text;
+  }
+}
+
+.danger:hover {
+  color: $color-danger;
+}
+
+.progress {
+  width: 100%;
+}
+
+.note {
+  margin: 0;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  white-space: pre-wrap;
+}
+
+.footer {
+  @include flex(row, space-between, center, $space-sm);
+  flex-wrap: wrap;
+  padding-top: $space-sm;
+  border-top: 1px solid $color-border;
+}
+
+.quickAdd {
+  @include flex(row, flex-start, center, $space-xs);
+}
+
+.stepInput {
+  width: 90px;
+  padding: 6px 10px;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  font-size: $font-size-sm;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+.deadline {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}

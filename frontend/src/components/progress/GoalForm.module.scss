@@ -1,0 +1,18 @@
+@use 'styles/abstracts' as *;
+
+.form {
+  @include flex(column, flex-start, stretch, $space-md);
+}
+
+.row {
+  @include flex(row, flex-start, flex-start, $space-md);
+
+  @include below('sm') {
+    flex-direction: column;
+    gap: $space-md;
+  }
+}
+
+.actions {
+  @include flex(row, flex-end, center, $space-sm);
+}

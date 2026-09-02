@@ -1,0 +1,9 @@
+@use 'styles/abstracts' as *;
+
+.form {
+  @include flex(column, flex-start, stretch, $space-md);
+}
+
+.actions {
+  @include flex(row, flex-end, center, $space-sm);
+}

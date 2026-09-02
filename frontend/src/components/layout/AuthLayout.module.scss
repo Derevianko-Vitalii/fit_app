@@ -1,0 +1,64 @@
+@use 'styles/abstracts' as *;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+
+  @include below('lg') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.promo {
+  @include flex(column, center, flex-start, $space-md);
+
+  padding: $space-xxl;
+  background: linear-gradient(150deg, $color-primary, $color-primary-dark);
+  color: $color-text-inverse;
+
+  @include below('lg') {
+    padding: $space-lg;
+    gap: $space-sm;
+  }
+
+  @include below('md') {
+    display: none;
+  }
+}
+
+.logo {
+  color: $color-text-inverse;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.9;
+  }
+}
+
+.promoTitle {
+  font-size: 2.25rem;
+  margin: 0;
+  max-width: 12ch;
+}
+
+.promoText {
+  margin: 0;
+  max-width: 40ch;
+  opacity: 0.9;
+}
+
+.features {
+  @include flex(column, flex-start, flex-start, $space-sm);
+  margin-top: $space-md;
+  font-size: $font-size-sm;
+  opacity: 0.95;
+}
+
+.formArea {
+  @include flex(column, center, center);
+  padding: $space-xl $space-md;
+  background-color: $color-bg;
+}

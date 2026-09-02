@@ -1,0 +1,28 @@
+@use 'styles/abstracts' as *;
+
+.page {
+  @include flex(column, center, center, $space-md);
+
+  padding: $space-xxl $space-md;
+  text-align: center;
+}
+
+.code {
+  font-size: 5rem;
+  font-weight: $font-weight-bold;
+  line-height: 1;
+  background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title {
+  margin: 0;
+}
+
+.text {
+  margin: 0;
+  color: $color-text-muted;
+  max-width: 40ch;
+}

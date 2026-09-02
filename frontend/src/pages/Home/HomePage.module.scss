@@ -1,0 +1,77 @@
+@use 'styles/abstracts' as *;
+
+.page {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.composer {
+  @include card($space-md);
+  margin-bottom: $space-md;
+}
+
+.feedHeader {
+  @include flex(row, space-between, center, $space-md);
+  margin-bottom: $space-xs;
+  flex-wrap: wrap;
+}
+
+.feedTitle {
+  margin: 0;
+  font-size: $font-size-xl;
+}
+
+.sortSelect {
+  width: auto;
+  min-width: 180px;
+}
+
+.total {
+  margin-bottom: $space-md;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+.searchResults {
+  width: 100%;
+}
+
+.searchHeader {
+  margin-bottom: $space-md;
+}
+
+.searchTitle {
+  margin: 0 0 $space-sm;
+  font-size: $font-size-lg;
+  overflow-wrap: anywhere;
+}
+
+.tabs {
+  @include flex(row, flex-start, center, $space-xs);
+  border-bottom: 1px solid $color-border;
+}
+
+.tab {
+  padding: $space-sm $space-md;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.tabActive {
+  color: $color-primary;
+  border-bottom-color: $color-primary;
+}
+
+.userResults {
+  @include flex(column, flex-start, stretch);
+  padding-top: $space-md;
+}

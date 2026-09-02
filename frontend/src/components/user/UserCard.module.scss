@@ -1,0 +1,48 @@
+@use 'styles/abstracts' as *;
+
+.card {
+  @include card($space-sm $space-md);
+  @include flex(row, space-between, center, $space-sm);
+
+  margin-bottom: $space-sm;
+}
+
+.link {
+  @include flex(row, flex-start, center, $space-sm);
+
+  flex: 1;
+  min-width: 0;
+  color: $color-text;
+
+  &:hover {
+    text-decoration: none;
+
+    .name {
+      text-decoration: underline;
+    }
+  }
+}
+
+.info {
+  @include flex(column, center, flex-start, 2px);
+  min-width: 0;
+}
+
+.name {
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-sm;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.meta {
+  @include flex(row, flex-start, center, $space-sm);
+  flex-wrap: wrap;
+}
+
+.login {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}

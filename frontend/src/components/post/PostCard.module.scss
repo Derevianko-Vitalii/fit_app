@@ -1,0 +1,128 @@
+@use 'styles/abstracts' as *;
+
+.card {
+  @include card($space-md);
+  @include flex(column, flex-start, stretch, $space-md);
+
+  margin-bottom: $space-md;
+}
+
+.header {
+  @include flex(row, flex-start, center, $space-sm);
+  flex-wrap: wrap;
+}
+
+.authorLink {
+  @include flex(row, flex-start, center, $space-sm);
+
+  flex: 1;
+  min-width: 0;
+  color: $color-text;
+
+  &:hover {
+    text-decoration: none;
+
+    .authorName {
+      text-decoration: underline;
+    }
+  }
+}
+
+.authorMeta {
+  @include flex(column, center, flex-start);
+  min-width: 0;
+}
+
+.authorName {
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-sm;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.date {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+.actions {
+  @include flex(row, flex-end, center, $space-xs);
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  color: $color-text-muted;
+  font-size: $font-size-xs;
+  padding: 4px 8px;
+  border-radius: $radius-sm;
+
+  &:hover {
+    background-color: $color-surface-alt;
+    color: $color-text;
+  }
+}
+
+.danger:hover {
+  color: $color-danger;
+}
+
+.content {
+  @include flex(column, flex-start, stretch, $space-sm);
+}
+
+.text {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.gallery {
+  border-radius: $radius-md;
+  overflow: hidden;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2px;
+}
+
+.image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  background-color: $color-surface-alt;
+}
+
+.footer {
+  @include flex(row, flex-start, center, $space-xs);
+
+  padding-top: $space-sm;
+  border-top: 1px solid $color-border;
+  flex-wrap: wrap;
+}
+
+.action {
+  @include flex(row, center, center, 6px);
+
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  border-radius: $radius-sm;
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    background-color: $color-surface-alt;
+    color: $color-text;
+    text-decoration: none;
+  }
+}
+
+.liked {
+  color: $color-primary;
+}

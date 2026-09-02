@@ -1,0 +1,48 @@
+@use 'styles/abstracts' as *;
+
+.section {
+  margin-bottom: $space-xl;
+}
+
+.header {
+  @include flex(row, space-between, center, $space-md);
+
+  margin-bottom: $space-md;
+  flex-wrap: wrap;
+}
+
+.heading {
+  @include flex(row, flex-start, center, $space-sm);
+}
+
+.icon {
+  font-size: $font-size-xxl;
+  line-height: 1;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-lg;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+.headerProgress {
+  flex: 1;
+  min-width: 180px;
+  max-width: 280px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $space-md;
+
+  @include below('sm') {
+    grid-template-columns: 1fr;
+  }
+}

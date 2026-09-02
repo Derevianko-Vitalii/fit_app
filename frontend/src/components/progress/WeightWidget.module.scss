@@ -1,0 +1,36 @@
+@use 'styles/abstracts' as *;
+
+.widget {
+  @include flex(column, flex-start, stretch, $space-sm);
+  margin-bottom: $space-xl;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-medium;
+}
+
+.scale {
+  @include flex(row, space-between, center, $space-sm);
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+.current {
+  color: $color-danger;
+  font-weight: $font-weight-semibold;
+}
+
+.facts {
+  @include flex(column, flex-start, stretch, $space-xs);
+  font-size: $font-size-md;
+}
+
+.good {
+  color: $color-success;
+}
+
+.left {
+  color: $color-danger;
+}

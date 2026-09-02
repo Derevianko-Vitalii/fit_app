@@ -1,0 +1,76 @@
+@use 'styles/abstracts' as *;
+
+.item {
+  @include flex(row, flex-start, flex-start, $space-md);
+
+  padding: $space-md 0;
+  border-bottom: 1px solid $color-cream-dark;
+}
+
+.body {
+  @include flex(column, flex-start, stretch, 2px);
+  flex: 1;
+  min-width: 0;
+}
+
+.topRow {
+  @include flex(row, space-between, baseline, $space-sm);
+}
+
+.author {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.meta {
+  @include flex(row, flex-end, baseline, $space-md);
+  flex-shrink: 0;
+}
+
+.date {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  font-style: italic;
+}
+
+.action {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+
+  &:hover {
+    color: $color-text;
+    text-decoration: underline;
+  }
+}
+
+.danger:hover {
+  color: $color-danger;
+}
+
+.text {
+  margin: 0;
+  font-size: $font-size-md;
+  color: $color-text;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.editArea {
+  @include flex(column, flex-start, stretch, $space-sm);
+  margin-top: $space-sm;
+}
+
+.editButtons {
+  @include flex(row, flex-end, center, $space-sm);
+}

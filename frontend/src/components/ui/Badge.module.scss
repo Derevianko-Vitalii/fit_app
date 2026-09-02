@@ -1,0 +1,38 @@
+@use 'styles/abstracts' as *;
+
+.badge {
+  @include flex(row, center, center, 4px);
+
+  display: inline-flex;
+  padding: 3px 10px;
+  border-radius: $radius-pill;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.neutral {
+  background-color: $color-surface-alt;
+  color: $color-text-muted;
+}
+
+.primary {
+  background-color: $color-primary-light;
+  color: $color-primary-dark;
+}
+
+.success {
+  background-color: rgba($color-success, 0.12);
+  color: $color-success;
+}
+
+.accent {
+  background-color: rgba($color-accent, 0.12);
+  color: $color-accent;
+}
+
+.danger {
+  background-color: rgba($color-danger, 0.12);
+  color: $color-danger;
+}

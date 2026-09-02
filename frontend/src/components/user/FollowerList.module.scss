@@ -1,0 +1,16 @@
+@use 'styles/abstracts' as *;
+
+.section {
+  width: 100%;
+}
+
+.title {
+  margin-bottom: $space-md;
+  font-size: $font-size-lg;
+}
+
+.list {
+  @include flex(column, flex-start, stretch);
+  max-height: 60vh;
+  overflow-y: auto;
+}

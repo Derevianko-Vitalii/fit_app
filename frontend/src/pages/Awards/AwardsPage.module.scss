@@ -1,0 +1,52 @@
+@use 'styles/abstracts' as *;
+
+.page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  @include flex(row, space-between, flex-start, $space-md);
+
+  margin-bottom: $space-lg;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-xl;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  max-width: 46ch;
+}
+
+.headerActions {
+  @include flex(row, flex-end, center, $space-sm);
+  flex-wrap: wrap;
+}
+
+.goalsSection {
+  margin-top: $space-xl;
+  padding-top: $space-lg;
+  border-top: 1px solid $color-border;
+}
+
+.sectionTitle {
+  margin-bottom: $space-md;
+  font-size: $font-size-lg;
+}
+
+.goalsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $space-md;
+
+  @include below('sm') {
+    grid-template-columns: 1fr;
+  }
+}

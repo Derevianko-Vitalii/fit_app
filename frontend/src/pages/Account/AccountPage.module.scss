@@ -1,0 +1,117 @@
+@use 'styles/abstracts' as *;
+
+.page {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) 300px;
+  gap: $space-xl;
+  align-items: start;
+
+  @include below('xl') {
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: $space-lg;
+  }
+
+  @include below('md') {
+    grid-template-columns: 1fr;
+    gap: $space-md;
+  }
+}
+
+.profileColumn {
+  position: sticky;
+  top: calc(#{$header-height} + #{$space-lg});
+
+  @include below('md') {
+    position: static;
+  }
+}
+
+.postsColumn {
+  min-width: 0;
+}
+
+.railColumn {
+  min-width: 0;
+
+  @include below('xl') {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  @include below('md') {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+.columnTitle {
+  margin: 0 0 $space-md;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-medium;
+}
+
+.railBlock {
+  margin-bottom: $space-xl;
+}
+
+.railHeader {
+  @include flex(row, space-between, baseline, $space-sm);
+}
+
+.allLink {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.medals {
+  @include flex(row, flex-start, flex-start, $space-md);
+  flex-wrap: wrap;
+}
+
+.medal {
+  @include flex(column, flex-start, center, $space-xs);
+  width: 76px;
+  text-align: center;
+}
+
+.medalCircle {
+  @include flex(row, center, center);
+
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 3px solid $color-primary;
+  background: linear-gradient(135deg, $color-primary-light, $color-cream);
+  font-size: 28px;
+  overflow: hidden;
+}
+
+.medalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.medalLabel {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  @include line-clamp(2);
+}
+
+.goals {
+  @include flex(column, flex-start, stretch, $space-md);
+}
+
+.goalRow {
+  width: 100%;
+}
+
+.empty {
+  margin: 0;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}

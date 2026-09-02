@@ -1,0 +1,36 @@
+@use 'styles/abstracts' as *;
+
+.wrapper {
+  @include flex(column, center, center, $space-md);
+
+  min-height: 100vh;
+  padding: $space-xl;
+  text-align: center;
+}
+
+.icon {
+  font-size: 48px;
+}
+
+.title {
+  margin: 0;
+}
+
+.text {
+  margin: 0;
+  color: $color-text-muted;
+  max-width: 42ch;
+}
+
+.button {
+  padding: 10px 24px;
+  border: none;
+  border-radius: $radius-sm;
+  background-color: $color-primary;
+  color: $color-text-inverse;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}

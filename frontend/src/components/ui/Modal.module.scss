@@ -1,0 +1,80 @@
+@use 'styles/abstracts' as *;
+
+.overlay {
+  @include flex(row, center, center);
+
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: $space-md;
+  animation: fade $transition-fast;
+}
+
+.dialog {
+  @include flex(column, flex-start, stretch);
+
+  width: 100%;
+  max-height: calc(100vh - #{$space-xl});
+  background-color: $color-surface;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  overflow: hidden;
+}
+
+.sm {
+  max-width: 400px;
+}
+.md {
+  max-width: 560px;
+}
+.lg {
+  max-width: 760px;
+}
+
+.header {
+  @include flex(row, space-between, center, $space-md);
+  padding: $space-md $space-lg;
+  border-bottom: 1px solid $color-border;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-lg;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: $color-text-muted;
+  padding: 0 $space-xs;
+  border-radius: $radius-sm;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.body {
+  padding: $space-lg;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.footer {
+  @include flex(row, flex-end, center, $space-sm);
+  padding: $space-md $space-lg;
+  border-top: 1px solid $color-border;
+  background-color: $color-surface-alt;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,60 @@
+@use 'styles/abstracts' as *;
+
+.page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  @include flex(row, space-between, flex-start, $space-md);
+
+  margin-bottom: $space-lg;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-xl;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  max-width: 46ch;
+}
+
+.streak {
+  margin-bottom: $space-md;
+}
+
+.filters {
+  @include flex(row, flex-start, center, $space-xs);
+
+  margin-bottom: $space-lg;
+  padding: $space-xs;
+  background-color: $color-surface-alt;
+  border-radius: $radius-pill;
+  width: fit-content;
+}
+
+.filter {
+  padding: 6px $space-md;
+  border: none;
+  background: none;
+  border-radius: $radius-pill;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.filterActive {
+  background-color: $color-surface;
+  color: $color-text;
+  font-weight: $font-weight-medium;
+  box-shadow: $shadow-sm;
+}

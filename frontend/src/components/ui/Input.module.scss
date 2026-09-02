@@ -1,0 +1,64 @@
+@use 'styles/abstracts' as *;
+
+.wrapper {
+  @include flex(column, flex-start, stretch, 6px);
+  width: 100%;
+}
+
+.label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-muted;
+}
+
+.field {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  background-color: $color-surface;
+  color: $color-text;
+  transition:
+    border-color $transition-fast,
+    box-shadow $transition-fast;
+
+  &::placeholder {
+    color: rgba($color-text-muted, 0.7);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
+  }
+
+  &:disabled {
+    background-color: $color-surface-alt;
+    cursor: not-allowed;
+  }
+}
+
+textarea.field {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.5;
+}
+
+.fieldError {
+  border-color: $color-danger;
+
+  &:focus {
+    border-color: $color-danger;
+    box-shadow: 0 0 0 3px rgba($color-danger, 0.15);
+  }
+}
+
+.error {
+  font-size: $font-size-xs;
+  color: $color-danger;
+}
+
+.hint {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}

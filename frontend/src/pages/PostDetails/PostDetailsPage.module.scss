@@ -1,0 +1,22 @@
+@use 'styles/abstracts' as *;
+
+.page {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: $space-md;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.comments {
+  @include card($space-md);
+}

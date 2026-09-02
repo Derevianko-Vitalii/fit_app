@@ -1,0 +1,59 @@
+@use 'sass:color';
+@use 'styles/abstracts' as *;
+
+.wrapper {
+  @include flex(column, flex-start, stretch, 6px);
+  width: 100%;
+}
+
+.meta {
+  @include flex(row, space-between, center, $space-sm);
+  font-size: $font-size-sm;
+}
+
+.label {
+  color: $color-text-muted;
+}
+
+.value {
+  font-weight: $font-weight-semibold;
+  font-variant-numeric: tabular-nums;
+}
+
+.track {
+  width: 100%;
+  background-color: $color-surface-alt;
+  border-radius: $radius-pill;
+  overflow: hidden;
+}
+
+.sm {
+  height: 6px;
+}
+.md {
+  height: 10px;
+}
+
+.fill {
+  height: 100%;
+  border-radius: $radius-pill;
+  transition: width $transition-base;
+}
+
+.primary {
+  background: linear-gradient(90deg, $color-primary, $color-primary-dark);
+}
+
+.success {
+  background: linear-gradient(90deg, color.scale($color-success, $lightness: 18%), $color-success);
+}
+
+.accent {
+  background: linear-gradient(90deg, color.scale($color-accent, $lightness: 22%), $color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill {
+    transition: none;
+  }
+}

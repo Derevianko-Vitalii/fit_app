@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+
+jobs:
+  quality:
+    name: Лінт, тести та збірка
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: frontend
+
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Налаштувати Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Встановити залежності
+        run: npm ci
+
+      - name: Перевірити форматування
+        run: npm run format:check
+
+      - name: Лінтинг
+        run: npm run lint
+
+      - name: Тести з покриттям
+        run: npm run test:coverage -- --ci
+
+      - name: Завантажити звіт покриття
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-node-${{ matrix.node-version }}
+          path: frontend/coverage
+          retention-days: 7
+
+      - name: Продакшн-збірка
+        run: npm run build

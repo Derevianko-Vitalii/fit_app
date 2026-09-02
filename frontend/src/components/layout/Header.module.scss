@@ -1,0 +1,142 @@
+@use 'styles/abstracts' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+  height: $header-height;
+  background-color: $color-cream;
+}
+
+.inner {
+  @include container;
+  @include flex(row, space-between, center, $space-md);
+
+  height: 100%;
+  max-width: none;
+
+  @include below('sm') {
+    gap: $space-sm;
+  }
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: $color-text;
+  padding: $space-xs;
+
+  @include below('lg') {
+    display: block;
+  }
+}
+
+.logo {
+  @include flex(row, flex-start, center, $space-xs);
+
+  color: $color-text;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-lg;
+  flex-shrink: 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.logoMark {
+  font-size: $font-size-xl;
+}
+
+.logoText {
+  @include below('sm') {
+    @include visually-hidden;
+  }
+}
+
+.search {
+  flex: 1;
+  min-width: 0;
+  max-width: 460px;
+}
+
+.nav {
+  flex-shrink: 0;
+}
+
+.authActions {
+  @include flex(row, flex-end, center, $space-xs);
+}
+
+.userMenu {
+  position: relative;
+}
+
+.userButton {
+  @include flex(row, flex-start, center, $space-sm);
+
+  background: none;
+  border: 1px solid transparent;
+  border-radius: $radius-pill;
+  padding: 4px 12px 4px 4px;
+  color: $color-text;
+
+  &:hover {
+    background-color: $color-surface-alt;
+  }
+}
+
+.userName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include below('md') {
+    display: none;
+  }
+}
+
+.dropdown {
+  @include flex(column, flex-start, stretch);
+
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  z-index: $z-dropdown;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-lg;
+  padding: $space-xs;
+}
+
+.dropdownItem {
+  padding: $space-sm $space-md;
+  border: none;
+  background: none;
+  border-radius: $radius-sm;
+  text-align: left;
+  color: $color-text;
+  font-size: $font-size-sm;
+
+  &:hover {
+    background-color: $color-surface-alt;
+    text-decoration: none;
+  }
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid $color-border;
+  margin: $space-xs 0;
+}
+
+.logout {
+  color: $color-danger;
+}

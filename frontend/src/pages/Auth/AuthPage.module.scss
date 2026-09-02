@@ -1,0 +1,46 @@
+@use 'styles/abstracts' as *;
+
+.card {
+  @include card($space-xl);
+
+  width: 100%;
+  max-width: 420px;
+
+  @include below('sm') {
+    padding: $space-lg;
+    border: none;
+    box-shadow: none;
+    background: none;
+  }
+}
+
+.title {
+  margin: 0 0 $space-xs;
+  font-size: $font-size-xxl;
+}
+
+.subtitle {
+  margin: 0 0 $space-lg;
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+}
+
+.form {
+  @include flex(column, flex-start, stretch, $space-md);
+}
+
+.row {
+  @include flex(row, flex-start, flex-start, $space-md);
+
+  @include below('sm') {
+    flex-direction: column;
+    gap: $space-md;
+  }
+}
+
+.switch {
+  margin: $space-lg 0 0;
+  text-align: center;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}

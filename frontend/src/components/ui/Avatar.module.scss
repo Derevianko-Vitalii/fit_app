@@ -1,0 +1,54 @@
+@use 'styles/abstracts' as *;
+
+.avatar {
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: $color-surface-alt;
+}
+
+.fallback {
+  @include flex(row, center, center);
+
+  background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+  color: $color-text-inverse;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.xs {
+  width: 24px;
+  height: 24px;
+  font-size: 10px;
+}
+
+.sm {
+  width: 32px;
+  height: 32px;
+  font-size: $font-size-xs;
+}
+
+.md {
+  width: 44px;
+  height: 44px;
+  font-size: $font-size-sm;
+}
+
+.lg {
+  width: 72px;
+  height: 72px;
+  font-size: $font-size-lg;
+}
+
+.xl {
+  width: 120px;
+  height: 120px;
+  font-size: $font-size-xxl;
+
+  @include below('md') {
+    width: 88px;
+    height: 88px;
+    font-size: $font-size-xl;
+  }
+}

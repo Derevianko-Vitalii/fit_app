@@ -1,0 +1,49 @@
+@use 'styles/abstracts' as *;
+
+.page {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  margin-bottom: $space-lg;
+  font-size: $font-size-xl;
+}
+
+.section {
+  @include card($space-lg);
+  margin-bottom: $space-md;
+}
+
+.sectionHeader {
+  margin-bottom: $space-md;
+  padding-bottom: $space-sm;
+  border-bottom: 1px solid $color-border;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: $font-size-lg;
+}
+
+.form {
+  @include flex(column, flex-start, stretch, $space-md);
+}
+
+.avatarRow {
+  @include flex(row, flex-start, center, $space-md);
+}
+
+.row {
+  @include flex(row, flex-start, flex-start, $space-md);
+
+  @include below('sm') {
+    flex-direction: column;
+    gap: $space-md;
+  }
+}
+
+.actions {
+  @include flex(row, flex-end, center, $space-sm);
+}

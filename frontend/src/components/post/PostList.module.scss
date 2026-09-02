@@ -1,0 +1,11 @@
+@use 'styles/abstracts' as *;
+
+.list {
+  @include flex(column, flex-start, stretch);
+  width: 100%;
+}
+
+.loadMore {
+  @include flex(row, center, center);
+  padding: $space-md 0 $space-lg;
+}

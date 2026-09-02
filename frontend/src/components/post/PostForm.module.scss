@@ -1,0 +1,24 @@
+@use 'styles/abstracts' as *;
+
+.form {
+  @include flex(column, flex-start, stretch, $space-md);
+}
+
+.top {
+  @include flex(row, flex-start, flex-start, $space-sm);
+}
+
+.footer {
+  @include flex(row, space-between, center, $space-sm);
+  flex-wrap: wrap;
+}
+
+.counter {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  font-variant-numeric: tabular-nums;
+}
+
+.buttons {
+  @include flex(row, flex-end, center, $space-sm);
+}
